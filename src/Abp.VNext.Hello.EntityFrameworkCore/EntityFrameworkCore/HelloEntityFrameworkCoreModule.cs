@@ -45,7 +45,7 @@ namespace Abp.VNext.Hello.EntityFrameworkCore
             {
                 /* The main point to change your DBMS.
                  * See also HelloMigrationsDbContextFactory for EF Core tooling. */
-                options.UseSqlite();//UseSqlServer
+                options.UseSqlServer();//UseSqlServer
             });
 
 
@@ -58,7 +58,7 @@ namespace Abp.VNext.Hello.EntityFrameworkCore
             });
             Configure<AbpDbContextOptions>(options =>
             {
-                options.UseSqlite<BackgroundJobsDbContext>(x =>
+                options.UseSqlServer<BackgroundJobsDbContext>(x =>
                 {
 
                 });
@@ -66,7 +66,7 @@ namespace Abp.VNext.Hello.EntityFrameworkCore
 
             Configure<AbpDbContextOptions>(options =>
             {
-                options.UseSqlite<FeatureManagementDbContext>(x =>
+                options.UseSqlServer<FeatureManagementDbContext>(x =>
                 {
 
                 });
@@ -74,14 +74,14 @@ namespace Abp.VNext.Hello.EntityFrameworkCore
 
             Configure<AbpDbContextOptions>(options =>
             {
-                options.UseSqlite<AbpAuditLoggingDbContext>(x =>
+                options.UseSqlServer<AbpAuditLoggingDbContext>(x =>
                 {
                 });
             });
 
             Configure<AbpDbContextOptions>(options =>
             {
-                options.UseSqlite<TenantManagementDbContext>(x =>
+                options.UseSqlServer<TenantManagementDbContext>(x =>
                 {
 
                 });
@@ -89,7 +89,7 @@ namespace Abp.VNext.Hello.EntityFrameworkCore
 
             Configure<AbpDbContextOptions>(options =>
             {
-                options.UseSqlite<SettingManagementDbContext>(x =>
+                options.UseSqlServer<SettingManagementDbContext>(x =>
                 {
 
                 });
@@ -97,7 +97,7 @@ namespace Abp.VNext.Hello.EntityFrameworkCore
 
             Configure<AbpDbContextOptions>((options) =>
             {
-                options.UseSqlite<IdentityDbContext>(x =>
+                options.UseSqlServer<IdentityDbContext>(x =>
                 {
                     // x.CommandTimeout(6_000);
                 });
@@ -105,7 +105,7 @@ namespace Abp.VNext.Hello.EntityFrameworkCore
 
             Configure<AbpDbContextOptions>((options) =>
             {
-                options.UseSqlite<PermissionManagementDbContext>(x =>
+                options.UseSqlServer<PermissionManagementDbContext>(x =>
                 {
                     x.CommandTimeout(6_000);
                 });
@@ -113,7 +113,7 @@ namespace Abp.VNext.Hello.EntityFrameworkCore
 
             Configure<AbpDbContextOptions>((options) =>
             {
-                options.UseSqlite<IdentityServerDbContext>(x =>
+                options.UseSqlServer<IdentityServerDbContext>(x =>
                 {
                     // x.MaxBatchSize(4096);
                     // x.CommandTimeout(6_000);
