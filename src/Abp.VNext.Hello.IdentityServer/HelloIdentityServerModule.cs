@@ -14,6 +14,8 @@ using StackExchange.Redis;
 using Volo.Abp;
 using Volo.Abp.Account;
 using Volo.Abp.Account.Web;
+using Volo.Abp.AspNetCore.Mvc.UI;
+using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
 using Volo.Abp.AspNetCore.Serilog;
@@ -25,9 +27,8 @@ using Volo.Abp.Caching.StackExchangeRedis;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.UI.Navigation.Urls;
+using Volo.Abp.UI;
 using Volo.Abp.VirtualFileSystem;
-using IdentityServer4.Configuration;
-using Microsoft.Extensions.Configuration;
 
 namespace Abp.VNext.Hello
 {
@@ -48,7 +49,7 @@ namespace Abp.VNext.Hello
         {
             var hostingEnvironment = context.Services.GetHostingEnvironment();
             var configuration = context.Services.GetConfiguration();
-            ConfigureIdentityServerOptions(configuration);
+
             Configure<AbpLocalizationOptions>(options =>
             {
                 options.Resources
@@ -57,15 +58,10 @@ namespace Abp.VNext.Hello
                         typeof(AbpUiResource)
                     );
 
-                options.Languages.Add(new LanguageInfo("ar", "ar", "العربية"));
-                options.Languages.Add(new LanguageInfo("cs", "cs", "Čeština"));
+           
                 options.Languages.Add(new LanguageInfo("en", "en", "English"));
-                options.Languages.Add(new LanguageInfo("fr", "fr", "Français"));
-                options.Languages.Add(new LanguageInfo("pt-BR", "pt-BR", "Português"));
-                options.Languages.Add(new LanguageInfo("ru", "ru", "Русский"));
-                options.Languages.Add(new LanguageInfo("tr", "tr", "Türkçe"));
                 options.Languages.Add(new LanguageInfo("zh-Hans", "zh-Hans", "简体中文"));
-                options.Languages.Add(new LanguageInfo("zh-Hant", "zh-Hant", "繁體中文"));
+  
             });
 
             Configure<AbpAuditingOptions>(options =>
@@ -125,29 +121,6 @@ namespace Abp.VNext.Hello
                 });
             });
         }
-
-
-
-
-        private void ConfigureIdentityServerOptions(IConfiguration configuration)
-        {
-            Configure<IdentityServerOptions>(options =>
-            {
-                options.Events.RaiseSuccessEvents = true;
-                options.Events.RaiseFailureEvents = true;
-                options.Events.RaiseErrorEvents = true;
-                options.Events.RaiseInformationEvents = true;
-                options.IssuerUri = configuration["App:IssuerUri"];
-                options.PublicOrigin = configuration["App:PublicOrigin"];
-                options.LowerCaseIssuerUri = true;
-                options.MutualTls.Enabled = true;
-                options.MutualTls.ClientCertificateAuthenticationScheme = "x509";
-
-                System.Diagnostics.Debug.WriteLine(options);
-            });
-        }
-
-
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {

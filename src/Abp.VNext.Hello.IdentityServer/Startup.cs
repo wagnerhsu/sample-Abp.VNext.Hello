@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Logging;
 
 namespace Abp.VNext.Hello
 {
@@ -8,8 +7,6 @@ namespace Abp.VNext.Hello
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            //ShowPII
-            IdentityModelEventSource.ShowPII = true;
             services.AddApplication<HelloIdentityServerModule>();
         }
 
