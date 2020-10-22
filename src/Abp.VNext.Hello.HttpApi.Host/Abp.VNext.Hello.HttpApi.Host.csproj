@@ -13,7 +13,7 @@
     <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
     <PackageReference Include="Serilog.Sinks.Async" Version="1.4.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.9" />
     <PackageReference Include="Microsoft.AspNetCore.DataProtection.StackExchangeRedis" Version="3.1.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.6" />
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy" Version="3.2.1" />
@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\IdentityServer4.AccessTokenValidation\src\IdentityServer4.AccessTokenValidation.csproj" />
     <ProjectReference Include="..\Abp.VNext.Hello.Application\Abp.VNext.Hello.Application.csproj" />
     <ProjectReference Include="..\Abp.VNext.Hello.EntityFrameworkCore.DbMigrations\Abp.VNext.Hello.EntityFrameworkCore.DbMigrations.csproj" />
     <ProjectReference Include="..\Abp.VNext.Hello.HttpApi\Abp.VNext.Hello.HttpApi.csproj" />
