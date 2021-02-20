@@ -39,13 +39,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Autofac" Version="3.2.1" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="4.2.1" />
 	  <PackageReference Include="AutoMapper" Version="10.0.0" />
-    <PackageReference Include="Volo.Abp.Caching.StackExchangeRedis" Version="3.2.1" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic" Version="3.2.1" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="3.2.1" />
-    <PackageReference Include="Volo.Abp.Account.Web.IdentityServer" Version="3.2.1" />
-    <PackageReference Include="Volo.Abp.Account.Application" Version="3.2.1" />
+    <PackageReference Include="Volo.Abp.Caching.StackExchangeRedis" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.Account.Web.IdentityServer" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.Account.Application" Version="4.2.1" />
     <ProjectReference Include="..\..\..\IdentityModel.AspNetCore.OAuth2Introspection\src\IdentityModel.AspNetCore.OAuth2Introspection.csproj" />
     <ProjectReference Include="..\..\..\IdentityModel\src\IdentityModel.csproj" />
     <ProjectReference Include="..\..\..\IdentityServer4.AccessTokenValidation\src\IdentityServer4.AccessTokenValidation.csproj" />
